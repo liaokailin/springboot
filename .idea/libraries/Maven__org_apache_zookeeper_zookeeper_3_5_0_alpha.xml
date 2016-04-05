@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.zookeeper:zookeeper:3.5.0-alpha">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Repo/org/apache/zookeeper/zookeeper/3.5.0-alpha/zookeeper-3.5.0-alpha.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Repo/org/apache/zookeeper/zookeeper/3.5.0-alpha/zookeeper-3.5.0-alpha-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Repo/org/apache/zookeeper/zookeeper/3.5.0-alpha/zookeeper-3.5.0-alpha-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

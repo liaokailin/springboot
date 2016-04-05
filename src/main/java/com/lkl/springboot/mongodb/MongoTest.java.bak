@@ -1,0 +1,95 @@
+package com.u51.lkl.springboot.mongodb;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.mongodb.MongoClient;
+
+/**
+ * 
+ *   <!--operate mongo direct-->
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.0.2</version>
+        </dependency>
+
+
+ * 测试java直接操作mongodb
+ * https://docs.mongodb.org/getting-started/java/query/
+ * Created by liaokailin on 16/1/5.
+ */
+public class MongoTest {
+
+    /**
+     * 输出所有的文件 等价于db
+     */
+    @Test
+    public void getAllDocuments() {
+        MongoClient client = new MongoClient("localhost", 27017);
+        ListDatabasesIterable<Document> listDatabasesIterable = client.listDatabases();
+        for (Iterator<Document> iter = listDatabasesIterable.iterator(); iter.hasNext();) {
+            Document document = iter.next();
+            System.out.println(document.toString());
+        }
+    }
+
+    @Test
+    public void getAllCollections() {
+        MongoClient client = new MongoClient("localhost", 27017);
+        MongoDatabase database = client.getDatabase("test");//获取test集合
+        ListCollectionsIterable<Document> listCollectionsIterable = database.listCollections();
+        for (Iterator<Document> iter = listCollectionsIterable.iterator(); iter.hasNext();) {
+            Document document = iter.next();
+            System.out.println(document.toString());
+        }
+    }
+
+    /*crud*/
+
+    private MongoCollection<Document> mongoCollection;
+
+    @Before
+    public void init() {
+        MongoClient client = new MongoClient("localhost", 27017);
+        MongoDatabase database = client.getDatabase("test");//获取test集合
+        mongoCollection = database.getCollection("person");
+    }
+
+    @Test
+    public void insert() {
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("restaurant_id", "11111");
+        map.put("company", "u51");
+        Document document = new Document(map);
+        mongoCollection.insertOne(document);
+    }
+
+    @Test
+    public void query() {
+        FindIterable<Document> findIterable = mongoCollection.find();
+        for (Iterator<Document> iter = findIterable.iterator(); iter.hasNext();) {
+            Document document = iter.next();
+            System.out.println(document.toString());
+
+        }
+    }
+
+    @Test
+    public void update() {
+        UpdateResult result = mongoCollection.updateOne(new Document("restaurant_id", "11111"), new Document("$set",
+            new Document("address.street", "East 31st Street")));
+        System.out.println(result.toString());
+    }
+
+    @Test
+    public void delete() {
+        mongoCollection.deleteOne(new Document("_id", "6bb44605-c8b4-46f1-b5d0-cfa978a88d0b"));
+    }
+
+}

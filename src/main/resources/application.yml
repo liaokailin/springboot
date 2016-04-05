@@ -1,0 +1,22 @@
+application:
+  name: liaokailin
+  version: 0.0.1v
+ 
+environments:
+        url: www.u51.com
+        name: enniu
+        innerClass:
+           className: org.u51.lkl.springboot
+           
+my:
+   servers:
+       - dev.bar.com
+       - foo.bar.com
+        
+# Server settings (ServerProperties)  tomcat 配置
+server:
+  port: 8080
+  address: 127.0.0.1
+  sessionTimeout: 30
+  contextPath: ""
+
