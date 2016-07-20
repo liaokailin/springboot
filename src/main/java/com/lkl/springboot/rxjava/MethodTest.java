@@ -63,7 +63,7 @@ public class MethodTest {
     }
 
     /**
-     * 已map来说明lift：observable.map() 整体为Observable，其OnSubscribe#call(订阅者)方法 将订阅者传递到Operator中返回一个新的订阅者，
+     * 以map来说明lift：observable.map() 整体为Observable，其OnSubscribe#call(订阅者)方法 将订阅者传递到Operator中返回一个新的订阅者，
      * 然后通过源被观察者(Observable)中的OnSubscribe#call(新订阅者)。
      * 
      * lift 创建一个新的Subscriber去订阅被观察者。 新的观察者由Operator#call构成。 新的观察者中的方法(onNext,onError,onCompleted)通过原始被观察者创建时的onSubscribe#call去调用
