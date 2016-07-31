@@ -1,6 +1,5 @@
 package com.lkl.springboot.redis;
 
-import org.springframework.boot.autoconfigure.redis.RedisProperties;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;

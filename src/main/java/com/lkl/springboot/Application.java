@@ -48,7 +48,7 @@ public class Application implements DisposableBean {
     }
 
     /**
-     * egister a shutdown hook  优雅退出，或者实现{@link DisposableBean} 接口
+     * register a shutdown hook  优雅退出，或者实现{@link DisposableBean} 接口
      * @call {@link ConfigurableApplicationContext#close()}
      * 
      */
@@ -58,7 +58,6 @@ public class Application implements DisposableBean {
     }
 
     public static void main(String[] args) {
-        //   START STYLE : SpringApplication.run(Application.class, args);
         SpringApplication app = new SpringApplication(Application.class);
 
         /**
@@ -77,7 +76,6 @@ public class Application implements DisposableBean {
 
     @Override
     public void destroy() throws Exception {
-
         System.out.println("exit by implements DisposableBean");
     }
 
