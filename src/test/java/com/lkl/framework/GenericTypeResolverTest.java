@@ -1,4 +1,4 @@
-package com.u51.lkl.springboot.test;
+package com.lkl.framework;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.core.GenericTypeResolver;

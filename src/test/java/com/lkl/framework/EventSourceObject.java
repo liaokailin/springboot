@@ -1,4 +1,4 @@
-package com.u51.lkl.test.event;
+package com.lkl.framework;
 
 import java.util.HashSet;
 import java.util.Set;

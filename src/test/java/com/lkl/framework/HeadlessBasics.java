@@ -1,4 +1,4 @@
-package com.u51.lkl.springboot.test;
+package com.lkl.framework;
 import java.awt.*;
 import java.io.*;
 import java.awt.print.*;

@@ -1,4 +1,4 @@
-package com.u51.lkl.springboot.test;
+package com.lkl.framework;
 
 import java.util.HashMap;
 import java.util.Map;

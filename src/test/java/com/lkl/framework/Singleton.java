@@ -1,4 +1,4 @@
-package com.u51.lkl.springboot.test.singleton;
+package com.lkl.framework;
 
 /**
  * 单例，考虑多线程

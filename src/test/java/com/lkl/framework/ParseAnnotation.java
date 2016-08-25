@@ -1,4 +1,4 @@
-package com.u51.lkl.springboot.test.annotation;
+package com.lkl.framework;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.annotation.AnnotationAttributes;

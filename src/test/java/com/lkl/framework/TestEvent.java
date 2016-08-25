@@ -1,4 +1,5 @@
-package com.u51.lkl.test.event;
+package com.lkl.framework;
+
 
 public class TestEvent {
 
@@ -8,5 +9,6 @@ public class TestEvent {
         eventSource.addListener(new CusEventListener());
         eventSource.addListener(new CusEventListener());
         eventSource.clickButton();
+
     }
 }
